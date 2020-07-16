@@ -1,0 +1,28 @@
+receivers:
+  jaeger:
+    protocols:
+      thrift_compact:
+        endpoint: "0.0.0.0:6831"
+
+exporters:
+  honeycomb:
+    api_key: "9aa92c8ecb675e866cd53f37030b2505"
+    dataset: "realworld-rails"
+    debug: true
+
+processors:
+  batch:
+  queued_retry:
+
+service:
+  pipelines:
+    traces:
+      receivers: [jaeger]
+      exporters: [honeycomb]
+
+#extensions:
+#  health_check:
+#  pprof:
+#    endpoint: :1888
+#  zpages:
+#    endpoint: :55679

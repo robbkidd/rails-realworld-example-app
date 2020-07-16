@@ -21,6 +21,9 @@ gem 'devise'
 gem 'jwt', '~> 1.5.4'
 gem 'puma'
 gem 'rack-cors', '~> 0.4.0'
+gem 'opentelemetry-api'
+gem 'opentelemetry-sdk'
+gem 'opentelemetry-exporters-jaeger'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
